@@ -1,0 +1,88 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Inzibati, Biznes və İdarə Etmə ",
+      "count": 312
+    },
+    {
+      "id": 2,
+      "name": "Maliyyə Xidmətləri",
+      "count": 15
+    },
+    {
+      "id": 3,
+      "name": "Komputerləşmə ve IKT",
+      "count": 96
+    },
+    {
+      "id": 4,
+      "name": "Pərakəndə satış və müştəri xidmətləri",
+      "count": 122
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "title": "HR Təcrübə programı",
+      "company": "Port education center",
+      "typeId": 1,
+      "publishDate" : "5 May 2023",
+      "deadline": "8 May 2023",
+      "views": 35
+    },
+    {
+      "id": 2,
+      "title": "Executive Assistant",
+      "company": "Company",
+      "typeId": 1,
+      "publishDate" : "5 May 2023",
+      "deadline": "19 May 2023",
+      "views": 120,
+      "salary": "1500-3000"
+    },
+    {
+      "id": 3,
+      "title": "Baş mühasib",
+      "company": "Ofis Plus",
+      "typeId": 2,
+      "publishDate" : "1 May 2023",
+      "deadline": "4 May 2023",
+      "views": 202,
+      "salary": 1200
+    },
+    {
+      "id": 4,
+      "title": "Maliyyə Direktoru",
+      "typeId": 2,
+      "publishDate" : "22 Aprel 2023",
+
+      "deadline": "03 iyun 2023",
+      "company": "İnvestel Group",
+      "views": 650,
+      "salary": "950"
+    },
+    {
+      "id": 5,
+      "title": "IT mütəxəssis/Helpdesk   ",
+      "typeId": 3,
+      "publishDate" : "2 May 2023",
+      "deadline": "04 iyun 2023",
+      "company": "Foriella",
+      "views": 840,
+      "salary": "1000"
+    },
+    {
+      "id": 6,
+      "title": "Proqramçı  (Frontend)  ",
+      "typeId": 3,
+      "publishDate" : "2 May 2023",
+
+      "deadline": "04 iyun 2023",
+      "company": "eManat",
+      "views": 400,
+      "salary": "390"
+    }
+
+  ]
+}
