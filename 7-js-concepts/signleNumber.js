@@ -9,6 +9,7 @@
 //   console.log(obj)
 // }
 
+
 function singleNumber(nums){
   let obj = {}
   for (let i=0;i<nums.length;i++){

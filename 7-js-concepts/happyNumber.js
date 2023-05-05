@@ -1,5 +1,5 @@
 function isHappy(num) {
-    let steps = 0
+  let steps = 0
   while (true) {
     let digits = getDigits(num)
     let sum = 0
@@ -8,8 +8,8 @@ function isHappy(num) {
     }
     num = sum
     steps++
-    if (num == 1){ return true }
-    if (steps == 100) { return false}
+    if (num == 1) { return true }
+    if (steps == 100) { return false }
     console.log(num)
   }
 
