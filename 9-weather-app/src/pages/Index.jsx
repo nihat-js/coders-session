@@ -3,8 +3,10 @@ import { baseURL } from "../consts/consts";
 import axios from "axios";
 import Container from "@mui/material/Container";
 import { Grid, Stack, TextField } from "@mui/material";
-import {useNavigate } from "react-router-dom"
-import {  useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getCityInfo } from "../features/customFetch";
+import SavedLocation from "../components/SavedLocation";
 export default function Index() {
   const [item, setItem] = useState({});
 
@@ -18,55 +20,55 @@ export default function Index() {
     }
   };
 
-  // const {savedLocations,latestSearchs} =  useSelector((state)=> state.main )
+  const getAllSaved = async () => {
+    let data = [];
+    for (let x of savedLocations) {
+      let response = await getCityInfo(x);
+      data.push(response);
+    }
+    setSavedArr(data);
+  };
+
+  useEffect(() => {
+    getAllSaved();
+  }, []);
+
+  const { savedLocations, latestSearchs } = useSelector((state) => state.main);
+  const [savedArr, setSavedArr] = useState([]);
+  const [latestArr, setLatestArr] = useState([]);
 
   // console.log("s",savedLocations,latestSearchs)
 
-  const [val,setVal] = useState("")
-  const navigate = useNavigate()
+  const [val, setVal] = useState("");
+  const navigate = useNavigate();
   return (
-    <div>
-      <Container maxWidth="sm" style={{ background: "#f2f6fc" }}>
-        <Stack py={4}
+    <div className="container-fluid">
+      <Container maxWidth="sm"  style={{ background: "#1f1f42",color : "white", minHeight : "600px" ,  borderRadius :"8px" } }>
+        <Stack
+          py={4}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
           spacing={2}
           p={2}
         >
-          <p> Search </p>
+          <p> Home </p>
           <p> ... </p>
         </Stack>
-        <TextField
+        <TextField  
+          inputProps={{ style: { color: "white" } }}
           id="outlined-basic"
           label="Search city,country or location"
-          variant="outlined" fullWidth
-          onChange={(e)=> setVal(e.target.value)  } 
-          onKeyDown={(e) => e.key == "Enter" ? navigate("/"+val) : ""  }
+          variant="outlined"
+          fullWidth
+          onChange={(e) => setVal(e.target.value)}
+          onKeyDown={(e) => (e.key == "Enter" ? navigate("/" + val) : "")}
         />
         <div className="saved-location">
-          <h3> Saved Locations </h3>
-          <div className="item">
-            <div className="left">
-              <h3 className="name"> Baku </h3>
-            </div>
-            <div className="right">
-              <p className="feels-like"> -3 </p>
-              <p className="high-and-low"> H : 3 L:-4 </p>
-            </div>
-          </div>
-        </div>
-        <div className="latest-searchs">
-          <h3> Latest Searchs </h3>
-          <div className="item">
-            <div className="left">
-              <h3 className="name"> Baku </h3>
-            </div>
-            <div className="right">
-              <p className="feels-like"> -3 </p>
-              <p className="high-and-low"> H : 3 L:-4 </p>
-            </div>
-          </div>
+          <h3 style={{marginBottom : "16px"}}> Saved Locations </h3>
+          {savedArr.map((i, j) => (
+            <SavedLocation data={i} key={j} />
+          ))}
         </div>
       </Container>
     </div>
