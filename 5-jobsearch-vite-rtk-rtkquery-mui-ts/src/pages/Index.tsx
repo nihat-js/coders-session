@@ -6,7 +6,7 @@ import Avatar from "@mui/material/Avatar";
 import { ListItemButton, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SideBar from "../components/SideBar";
-import { useGetJobsQuery } from "../store/store";
+import { useGetJobsQuery } from "../store/apiSlice";
 import { useSelector } from "react-redux";
 // import VisibilityIcon from '@mui/icons-material/Visibility';
 // import ImageIcon from '@mui/icons-material/Image';

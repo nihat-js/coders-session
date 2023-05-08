@@ -6,11 +6,8 @@ import Avatar from "@mui/material/Avatar";
 import { ListItemButton } from "@mui/material";
 import SideBar from "../components/SideBar";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setSelectedCategory,
-  useGetCategoriesQuery,
-  useGetJobsQuery,
-} from "../store/store";
+import {  useGetCategoriesQuery,  useGetJobsQuery,} from "../store/apiSlice";
+import { setSelectedCategory } from "../store/mainSlice";
 // import ImageIcon from '@mui/icons-material/Image';
 // import WorkIcon from '@mui/icons-material/Work';
 // import BeachAccessIcon from '@mui/icons-material/BeachAccess';
