@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { baseURL } from "../consts/consts";
 import axios from "axios";
 import Container from "@mui/material/Container";
-import { Grid, Stack, TextField } from "@mui/material";
+import { Grid, Stack, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getCityInfo } from "../features/customFetch";
@@ -43,14 +43,14 @@ export default function Index() {
   const navigate = useNavigate();
   return (
     <div className="container-fluid">
-      <Container maxWidth="sm"  style={{ background: "#1f1f42",color : "white", minHeight : "600px" ,  borderRadius :"8px" } }>
+      <Container maxWidth="sm"  style={{ background: "#5c07ab",color : "white", minHeight : "600px" ,  borderRadius :"8px" } }>
         <Stack
-          py={4}
+
           direction="row"
           justifyContent="space-between"
           alignItems="center"
           spacing={2}
-          p={2}
+          py={4}
         >
           <p> Home </p>
           <p> ... </p>
@@ -65,7 +65,7 @@ export default function Index() {
           onKeyDown={(e) => (e.key == "Enter" ? navigate("/" + val) : "")}
         />
         <div className="saved-location">
-          <h3 style={{marginBottom : "16px"}}> Saved Locations </h3>
+          <Typography variant="h5" sx={{margin : "24px 0"}}> Saved Locations </Typography>
           {savedArr.map((i, j) => (
             <SavedLocation data={i} key={j} />
           ))}

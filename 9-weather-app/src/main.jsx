@@ -8,13 +8,11 @@ import { Provider } from 'react-redux'
 import {store} from "./store/store.jsx"
 ReactDOM.createRoot(document.getElementById('root') ).render(
   <Provider store={store}>
-
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Index/>} />
       <Route path="/:city" element={<Details/>} />
     </Routes>
   </BrowserRouter>
-
   </Provider>
   )
